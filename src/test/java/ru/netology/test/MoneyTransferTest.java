@@ -29,14 +29,13 @@ class MoneyTransferTest {
     DashboardPage dashboardPage = new DashboardPage();
     int firstBalance = dashboardPage.getCardBalance(card1);
     int secondBalance = dashboardPage.getCardBalance(card2);
-    if (firstBalance > secondBalance) {
-      int difference = firstBalance - secondBalance;
+    int difference = firstBalance - secondBalance;
+    if (difference > 0) {
       var moneyTransfer = dashboardPage.topUpButtonClick(card2);
       moneyTransfer.topUpBalance(difference / 2, card1);
-    } else if (firstBalance < secondBalance){
-      int difference = secondBalance - firstBalance;
+    } else if (difference < 0) {
       var moneyTransfer = dashboardPage.topUpButtonClick(card1);
-      moneyTransfer.topUpBalance(difference / 2, card2);
+      moneyTransfer.topUpBalance(Math.abs(difference)/ 2, card2);
     }
   }
 
@@ -45,13 +44,13 @@ class MoneyTransferTest {
     int amount = 1000;
 
     DashboardPage dashboardPage = new DashboardPage();
-    int firstBalance = dashboardPage.getCardBalance(card1);
-    int secondBalance = dashboardPage.getCardBalance(card2);
+    int firstDefaultBalance = dashboardPage.getCardBalance(card1);
+    int secondDefaultBalance = dashboardPage.getCardBalance(card2);
     var moneyTransfer = dashboardPage.topUpButtonClick(card1);
     moneyTransfer.topUpBalance(amount, card2);
 
-    assertEquals(firstBalance + amount, dashboardPage.getCardBalance(card1));
-    assertEquals(secondBalance - amount, dashboardPage.getCardBalance(card2));
+    assertEquals(firstDefaultBalance + amount, dashboardPage.getCardBalance(card1));
+    assertEquals(secondDefaultBalance - amount, dashboardPage.getCardBalance(card2));
   }
 
   @Test
