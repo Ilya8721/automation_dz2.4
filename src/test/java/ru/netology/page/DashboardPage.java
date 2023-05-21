@@ -18,7 +18,7 @@ public class DashboardPage {
   private SelenideElement pageRefresh = $("[data-test-id='action-reload']");
 
 
-  public DashboardPage() {
+  public void DashboardPage() {
     heading.shouldBe(visible);
   }
 
