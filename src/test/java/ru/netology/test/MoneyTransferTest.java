@@ -37,6 +37,7 @@ class MoneyTransferTest {
       var moneyTransfer = dashboardPage.topUpButtonClick(card1);
       moneyTransfer.topUpBalance(Math.abs(difference)/ 2, card2);
     }
+
   }
 
   @Test
