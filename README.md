@@ -1,5 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/t69l414pfybr92p1/branch/main?svg=true)](https://ci.appveyor.com/project/Ilya8721/automation-2-4-page-objects/branch/main)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/0854v8jl17500c4c/branch/main?svg=true)](https://ci.appveyor.com/project/Ilya8721/automation-2-4-page-objects/branch/main)
 
 # Домашнее задание к занятию «2.4. BDD»
 
